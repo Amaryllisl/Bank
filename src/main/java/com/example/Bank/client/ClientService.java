@@ -26,7 +26,7 @@ public class ClientService extends Thread{
         while (clientDatabase.isInUse()) {}
         clientDatabase.removeClient(clientId);
     }
-    public int getbalance(int clientId){
+    public int getBalance(int clientId){
         while (clientDatabase.isInUse()) {}
         return clientDatabase.getBalance(clientId);
     }

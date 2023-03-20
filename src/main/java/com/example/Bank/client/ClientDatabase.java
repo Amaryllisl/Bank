@@ -14,9 +14,11 @@ public class ClientDatabase {
     }
 
     public void test() {
+        this.inUse = true;
         this.addClient(new Client("Amaryllis", 1000,3456));
         this.addClient(new Client("Orin", 1000,7890));
         this.addClient(new Client("Kobe", 1000,1230));
+        this.inUse = false;
     }
 
     public Vector<Client> getClientList() {
@@ -44,12 +46,13 @@ public class ClientDatabase {
     }
 
     public int getBalance(int clientId) {
-        int balance=0;
+        int balance = 0;
         for (int i=0; i < clientList.size(); i++) {
             if (clientList.elementAt(i).getClientId() == clientId) {
                 balance = clientList.elementAt(i).getBalance();
             }
         }
+        System.out.println(balance);
         return balance;
     }
 

@@ -37,10 +37,10 @@ public class ClientController {
     }
 
     @GetMapping(path= "{clientId}/balance")
-    public void getBalance(@PathVariable("clientId") int clientId){
+    public int getBalance(@PathVariable("clientId") int clientId){
         ClientService clientService = new ClientService();
         clientService.setDatabase(this.clientDatabase);
-        clientService.getbalance(clientId);
+        return clientService.getBalance(clientId);
     }
 
     @PutMapping(path= "{clientId}/deposit/{amount}")
